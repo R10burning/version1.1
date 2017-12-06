@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-cn">
+    <meta charset="UTF-8">
+    <!--2 viewport-->
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <!--3、x-ua-compatible-->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>首页</title>
+    <!--4、引入两个兼容文件-->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+  <![endif]-->
+    <!--6、引入 bootstrap.css-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.min.css">
+    <link rel="stylesheet" href="css/popup.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+</head>
+<body class="popup-container">
+    <div class="img-flex">
+    </div>
+    <!--导航栏-->
+    <nav class="navbar navbar-default navbar-fixed-top" id="nav">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#my-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="my-collapse" class="collapse navbar-collapse">
+                <!--左边导航-->
+                <ul class="nav navnar-nav navbar-left" id="login-head">
+                    <li class="pull-left"><a href="#"><img src="images/calendar.png"> 04-12</a></li>
+                    <li class="pull-left"><a href="#"><img src="images/weather.png"> 14℃~20℃</a></li>
+                    <li class="pull-left"><a href="#" class="change-skin"><img src="images/skin.png"> 换肤</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" id="nav-info">
+                    <li><a href="#" target="_blank">服务大厅</a></li>
+                    <li><a href="#">新闻中心</a></li>
+                    <li><a href="#">视频中心</a></li>
+                    <li><a href="#" class="hover-show"><img src="images/more.png"></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--换肤栏-->
+    <div id="wrap-skin">
+        <div class="container" id="show-skin">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul class="nav nav-pills">
+                        <li class="active"><a href="#recommend" data-toggle="tab">推荐背景</a></li>
+                        <li><a href="#user-defined" data-toggle="tab">自定义背景</a></li>
+                        <li>
+                            <input type="range" min="0" max="100" value="0" step="1" id="range">
+                            <span id="opacity">透明度:</span>
+                        </li>
+                        <li><a href="#" class="no-skin">&times; 不使用皮肤</a></li>
+                        <li><a href="#" class="skin-up"><img src="images/skin-up.png">收起</a></li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-xs-12 tab-content" id="all-skin">
+                            <div id="recommend" class="tab-pane active">
+                                <div id="car1" class="carousel banner">
+                                    <!--轮播区域-->
+                                    <div class="carousel-inner">
+                                        <!--具体轮播项-->
+                                        <div class="item active">
+                                            <!--注意！！！一页最多放5张图片 一页最多放5张图片一页最多放5张图片！！！！重要的事情说三遍-->
+                                            <a href="#"><img src="images/back1.jpg"/></a>
+                                            <a href="#"><img src="images/back2.jpg"/></a>
+                                            <a href="#"><img src="images/back3.jpg"/></a>
+                                            <a href="#"><img src="images/back4.jpg"/></a>
+                                            <a href="#"><img src="images/back1.jpg"/></a>
+                                        </div>
+                                        <div class="item">
+                                            <!--注意！！！一页最多放5张图片 一页最多放5张图片一页最多放5张图片！！！！重要的事情说三遍-->
+                                            <a href="#"><img src="images/back4.jpg"/></a>
+                                            <a href="#"><img src="images/back2.jpg"/></a>
+                                            <a href="#"><img src="images/back3.jpg"/></a>
+                                            <a href="#"><img src="images/back4.jpg"/></a>
+                                            <a href="#"><img src="images/back1.jpg"/></a>
+                                        </div>
+                                    </div>
+                                    <!-- 增加导航圆点 -->
+                                    <ul class="carousel-indicators">
+                                        <li class="active" data-target="#car1" data-slide-to="0"></li>
+                                        <li data-target="#car1" data-slide-to="1"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="user-defined" class="tab-pane">
+                                <a href="javascript:void(0);" class="file">选择文件
+                                    <input type="file" name="my-skin" id="choose-file">
+                                </a>
+                                <div class="preview-skin">
+                                    <img src="" id="preview-skin">
+                                </div>
+                                <button type="button">保存</button>
+                                <button id="cancel" type="button">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--右上角隐藏导航-->
+    <ul class="hover-window">
+        <li>
+            <a href="infoVisitor.html">服<span>服务中心</span></a>
+        </li>
+        <li><a href="notice.html">新<span>新闻中心</span></a></li>
+        <li><a href="newsCenter.html">告 <span>通知公告</span></a></li>
+        <li><a href="videoCenter.html">程 <span>日程安排</span></a></li>
+        <li><a href="#">通 <span>通讯录</span></a></li>
+        <li><a href="#">要 <span>重要提醒</span></a></li>
+        <li><a href="#">具 <span>日程安排</span></a></li>
+        <li><a href="#">课 <span>课程表</span></a></li>
+        <li><a href="#">视 <span>视屏中心</span></a></li>
+    </ul>
+    <!--中间搜索部分-->
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="wrap-box wow rotateIn" data-wow-delay="2s" data-wow-duration=".5s">
+                    <div class="wrap-img wow rollIn" data-wow-duration=".8s" data-wow-delay="2s">
+                        <h1>
+                            <img src="images/logo.png" alt="">
+                        </h1>
+                    </div>
+                    <div class="search wow rotateInDownRight" data-wow-duration=".8s" data-wow-delay="3.5s">
+                        <input type="text">
+                        <button type="button">搜索</button>
+                    </div>
+                    <div class="hot-words wow zoomInRight" data-wow-duration=".8s" data-wow-delay="3s">
+                        <ul>
+                            <li>热门搜索:</li>
+                            <li><a href="#">安防调度</a></li>
+                            <li><a href="#">安防调度</a></li>
+                            <li><a href="#">安防调度</a></li>
+                            <li><a href="#">安防调度</a></li>
+                            <li><a href="#">安防调度</a></li>
+                            <li><a href="#">安防调度</a></li>
+                            <li><a href="#">安防调度</a></li>
+                        </ul>
+                    </div>
+                    <div class="services wow zoomInRight" data-wow-duration=".8s" data-wow-delay="3s">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <img src="images/system.png" alt="">
+                                    <br>
+                                    服务大厅
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/survey.png" alt="">
+                                    <br>
+                                    问卷调查
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/news.png" alt="">
+                                    <br>
+                                    新闻中心
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/news.png" alt="">
+                                    <br>
+                                    新闻中心
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="container" id="footer">
+            <div class="wow rollIn" data-wow-duration=".8s" data-wow-delay="3.5s">
+                <p>京ICP备14007358号-1 / 京公网安备11010802014104号 / Powered by © 2008-2017</p>
+            </div>
+    </footer>
+<!--5、引入 jquery，bootstrap js-->
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/fragment.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/index.js"></script>
+<script src="js/wow.min.js"></script>
+</body>
+</html>
